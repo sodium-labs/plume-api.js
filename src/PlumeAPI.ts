@@ -14,6 +14,7 @@ import {
     GitHubRepository,
     GitHubUser,
     HeightBallData,
+    InteractionData,
     InteractionType,
     IPInfoData,
     ISSData,
@@ -206,8 +207,8 @@ export default class PlumeAPI {
 
     // Interactions
 
-    public async interaction(type: InteractionType): Promise<Buffer> {
-        return await this.rest.file(`/interactions/${type}`);
+    public async interaction(type: InteractionType): Promise<InteractionData> {
+        return await this.rest.get(`/interactions/${type}`);
     }
 
     // Image Creation

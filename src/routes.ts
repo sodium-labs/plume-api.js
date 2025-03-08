@@ -251,3 +251,7 @@ export interface WikipediaData {
     };
     extract: string;
 }
+
+export interface InteractionData {
+    url: string;
+}
