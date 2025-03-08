@@ -108,7 +108,7 @@ reverseText(text: string): Promise<ReverseTextData>;
 translate(text: string, to: string): Promise<TranslateData>;
 weather(city: string): Promise<WeatherData>;
 wikipedia(page: string, locale?: Locale): Promise<WikipediaData>;
-interaction(type: InteractionType): Promise<Buffer>;
+interaction(type: InteractionType): Promise<InteractionData>;
 achievement(text: string): Promise<Buffer>;
 alert(text: string): Promise<Buffer>;
 caution(text: string): Promise<Buffer>;
