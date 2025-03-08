@@ -1,12 +1,12 @@
-<div style="text-align: center;">
+<div align="center">
 <br />
-    <p style="font-size: 2.5rem; font-weight: bold;">Plume API.js</p>
+    <h1>Plume API.js</h1>
     <br />
     <p>
         <a href="https://discord.gg/8PDXWSHH7k"><img src="https://img.shields.io/discord/1336303640725553213?color=5865F2&logo=discord&logoColor=white" alt="Discord server" /></a>
         <a href="https://www.npmjs.com/package/@sodiumlabs/plume-api"><img src="https://img.shields.io/npm/v/@sodiumlabs/plume-api.svg?maxAge=3600" alt="npm version" /></a>
         <a href="https://www.npmjs.com/package/@sodiumlabs/plume-api"><img src="https://img.shields.io/npm/dt/@sodiumlabs/plume-api.svg?maxAge=3600" alt="npm downloads" /></a>
-        <a href="https://github.com/cbrra/plume-api.js/commits/main"><img alt="Last commit" src="https://img.shields.io/github/last-commit/cbrra/plume-api.js?logo=github&logoColor=ffffff" /></a>
+        <a href="https://github.com/sodium-labs/plume-api.js/commits/main"><img alt="Last commit" src="https://img.shields.io/github/last-commit/sodium-labs/plume-api.js?logo=github&logoColor=ffffff" /></a>
     </p>
 </div>
 
@@ -26,7 +26,7 @@ npm install @sodiumlabs/plume-api
 - [Plume API documentation](https://plume.ptarmigan.xyz/docs)
 - [Module references](#references)
 - [Discord server](https://discord.gg/8PDXWSHH7k)
-- [GitHub](https://github.com/cbrra/plume-api.js)
+- [GitHub](https://github.com/sodium-labs/plume-api.js)
 - [npm](https://npmjs.com/package/@sodiumlabs/plume-api)
 
 # Examples
