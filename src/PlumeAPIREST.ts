@@ -18,21 +18,24 @@ export default class PlumeAPIREST {
             throw new Error(`Invalid path: ${path}`);
         }
 
+        const headers = new Headers({
+            "User-Agent": `${PlumeAPIREST.defaultUserAgent} ${this.options.userAgent || ""}`.trim(),
+        });
+
         const url = `${PlumeAPIREST.baseURL}${path}`;
+
+        let res;
         try {
-            const headers = new Headers({
-                "User-Agent": `${PlumeAPIREST.defaultUserAgent} ${this.options.userAgent || ""}`.trim(),
-            });
-
-            const res = await fetch(url, { method, headers, body: body ? JSON.stringify(body) : undefined });
-            if (!res.ok) {
-                throw new PlumeAPIError(`Failed to fetch ${url}: ${res.statusText}`, undefined, res);
-            }
-
-            return res;
+            res = await fetch(url, { method, headers, body: body ? JSON.stringify(body) : undefined });
         } catch (err) {
             throw new PlumeAPIError(`Failed to fetch ${url}`, { cause: err });
         }
+
+        if (!res.ok) {
+            throw new PlumeAPIError(`Invalid response ${url}: ${res.statusText}`, undefined, res);
+        }
+
+        return res;
     }
 
     public async get<T = unknown>(path: string): Promise<T> {
