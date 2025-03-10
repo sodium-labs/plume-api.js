@@ -48,6 +48,14 @@ export default class PlumeAPI {
 
     // Fun
 
+    public async eightBall(locale?: Locale): Promise<HeightBallData> {
+        const params = queryfy({ locale });
+        return await this.rest.get(`/8ball${params}`);
+    }
+
+    /**
+     * @deprecated Use `eightBall` instead
+     */
     public async heightBall(locale?: Locale): Promise<HeightBallData> {
         const params = queryfy({ locale });
         return await this.rest.get(`/8ball${params}`);
