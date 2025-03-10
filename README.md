@@ -74,7 +74,7 @@ await interaction.editReply({ files: [attachment] });
 PlumeAPI class methods. <br/> You can find the types definitions on the [API documentation](https://plume.ptarmigan.xyz/docs).
 
 ```js
-heightBall(locale?: Locale): Promise<HeightBallData>;
+eightBall(locale?: Locale): Promise<HeightBallData>;
 emojiMix(left: string, right: string): Promise<EmojiMixData>;
 funFact(locale?: Locale): Promise<FunFactData>;
 issImage(circle?: boolean): Promise<Buffer>;
