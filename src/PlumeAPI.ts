@@ -204,6 +204,11 @@ export default class PlumeAPI {
         return await this.rest.get(`/reverse-text${params}`);
     }
 
+    public async screenshot(url: string): Promise<Buffer> {
+        const params = queryfy({ url });
+        return await this.rest.file(`/screenshot${params}`);
+    }
+
     public async translate(text: string, to: string): Promise<TranslateData> {
         const params = queryfy({ text, to });
         return await this.rest.get(`/translate${params}`);
