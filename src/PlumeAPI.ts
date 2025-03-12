@@ -349,6 +349,11 @@ export default class PlumeAPI {
         return await this.rest.file(`/memes/oogway${params}`);
     }
 
+    public async pepeHug(avatar: string): Promise<Buffer> {
+        const params = queryfy({ avatar });
+        return await this.rest.file(`/memes/pepe-hug${params}`);
+    }
+
     public async sadcat(top: string, bottom: string): Promise<Buffer> {
         const params = queryfy({ top, bottom });
         return await this.rest.file(`/memes/sadcat${params}`);
