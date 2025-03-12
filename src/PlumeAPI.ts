@@ -27,6 +27,7 @@ import {
     RandomEmojiMixData,
     ReverseTextData,
     TranslateData,
+    UpsideDownTextData,
     UrbanData,
     WeatherData,
     WikipediaData,
@@ -110,6 +111,11 @@ export default class PlumeAPI {
 
     public async randomEmojiMix(): Promise<RandomEmojiMixData> {
         return await this.rest.get("/random-emoji-mix");
+    }
+
+    public async upsideDown(text: string): Promise<UpsideDownTextData> {
+        const params = queryfy({ text });
+        return await this.rest.get(`/upside-down${params}`);
     }
 
     public async urban(word: string): Promise<UrbanData> {

@@ -90,6 +90,10 @@ export interface RandomEmojiMixData {
     emoji_url: string;
 }
 
+export interface UpsideDownTextData {
+    text: string;
+}
+
 export interface UrbanData {
     word: string;
     url: string;
