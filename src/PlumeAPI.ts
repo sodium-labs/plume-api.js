@@ -1,14 +1,18 @@
 import PlumeAPIREST, { PlumeAPIRESTOptions } from "./PlumeAPIREST";
 import {
+    AdviceData,
+    AgifyData,
     CryptoData,
     DecodeData,
     DecodeType,
     DefinitionData,
+    EmojifyData,
     EmojiMixData,
     EncodeData,
     EncodeType,
     ExecData,
     ExecLanguage,
+    FortniteMapData,
     FreeGamesData,
     FunFactData,
     GitHubRepository,
@@ -21,6 +25,9 @@ import {
     JokeData,
     MathData,
     MemeData,
+    MinecraftIDData,
+    MinecraftNameData,
+    MinecraftSkinData,
     NasaAPOD,
     NPMData,
     QuoteData,
@@ -29,6 +36,7 @@ import {
     TranslateData,
     UpsideDownTextData,
     UrbanData,
+    UUIDData,
     WeatherData,
     WikipediaData,
 } from "./routes";
@@ -54,6 +62,16 @@ export default class PlumeAPI {
         return await this.rest.get(`/8ball${params}`);
     }
 
+    public async advice(locale?: Locale): Promise<AdviceData> {
+        const params = queryfy({ locale });
+        return await this.rest.get(`/advice${params}`);
+    }
+
+    public async agify(name: string): Promise<AgifyData> {
+        const params = queryfy({ name });
+        return await this.rest.get(`/agify${params}`);
+    }
+
     /**
      * @deprecated Use `eightBall` instead
      */
@@ -65,6 +83,11 @@ export default class PlumeAPI {
     public async emojiMix(left: string, right: string): Promise<EmojiMixData> {
         const params = queryfy({ left, right });
         return await this.rest.get(`/emoji-mix${params}`);
+    }
+
+    public async emojify(text: string): Promise<EmojifyData> {
+        const params = queryfy({ text });
+        return await this.rest.get(`/emojify${params}`);
     }
 
     public async funFact(locale?: Locale): Promise<FunFactData> {
@@ -136,16 +159,6 @@ export default class PlumeAPI {
         return await this.rest.get("/color/random");
     }
 
-    public async decode(type: DecodeType, text: string): Promise<DecodeData> {
-        const params = queryfy({ text });
-        return await this.rest.get(`/decode/${type}${params}`);
-    }
-
-    public async encode(type: EncodeType, text: string): Promise<EncodeData> {
-        const params = queryfy({ text });
-        return await this.rest.get(`/encode/${type}${params}`);
-    }
-
     public async githubRepository(name: string): Promise<GitHubRepository> {
         const params = queryfy({ name });
         return await this.rest.get(`/github/repository${params}`);
@@ -214,6 +227,10 @@ export default class PlumeAPI {
         return await this.rest.get(`/translate${params}`);
     }
 
+    public async uuid(): Promise<UUIDData> {
+        return await this.rest.get("/uuid");
+    }
+
     public async weather(city: string): Promise<WeatherData> {
         const params = queryfy({ city });
         return await this.rest.get(`/weather${params}`);
@@ -222,6 +239,73 @@ export default class PlumeAPI {
     public async wikipedia(page: string, locale?: Locale): Promise<WikipediaData> {
         const params = queryfy({ page, locale });
         return await this.rest.get(`/wikipedia${params}`);
+    }
+
+    // Animals
+
+    public async duck(): Promise<Buffer> {
+        return await this.rest.file("/animals/duck");
+    }
+
+    public async fox(): Promise<Buffer> {
+        return await this.rest.file("/animals/fox");
+    }
+
+    // Encode
+
+    public async encode(type: EncodeType, text: string): Promise<EncodeData> {
+        const params = queryfy({ text });
+        return await this.rest.get(`/encode/${type}${params}`);
+    }
+
+    // Decode
+
+    public async decode(type: DecodeType, text: string): Promise<DecodeData> {
+        const params = queryfy({ text });
+        return await this.rest.get(`/decode/${type}${params}`);
+    }
+
+    // Fortnite
+
+    public async fortniteMapImagePois(locale?: Locale): Promise<Buffer> {
+        const params = queryfy({ locale });
+        return await this.rest.file(`/fortnite/map/image-pois${params}`);
+    }
+
+    public async fortniteMapImage(): Promise<Buffer> {
+        return await this.rest.file("/fortnite/map/image");
+    }
+
+    public async fortniteMap(locale?: Locale): Promise<FortniteMapData> {
+        const params = queryfy({ locale });
+        return await this.rest.get(`/fortnite/map${params}`);
+    }
+
+    // Minecraft
+
+    public async minecraftAvatar(name: string): Promise<Buffer> {
+        const params = queryfy({ name });
+        return await this.rest.get(`/minecraft/avatar${params}`);
+    }
+
+    public async minecraftBody(name: string): Promise<Buffer> {
+        const params = queryfy({ name });
+        return await this.rest.get(`/minecraft/body${params}`);
+    }
+
+    public async minecraftID(name: string): Promise<MinecraftIDData> {
+        const params = queryfy({ name });
+        return await this.rest.get(`/minecraft/id${params}`);
+    }
+
+    public async minecraftName(id: string): Promise<MinecraftNameData> {
+        const params = queryfy({ id });
+        return await this.rest.get(`/minecraft/name${params}`);
+    }
+
+    public async minecraftSkin(name: string): Promise<MinecraftSkinData> {
+        const params = queryfy({ name });
+        return await this.rest.get(`/minecraft/skin${params}`);
     }
 
     // Interactions

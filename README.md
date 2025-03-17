@@ -74,8 +74,12 @@ await interaction.editReply({ files: [attachment] });
 PlumeAPI class methods. <br/> You can find the types definitions on the [API documentation](https://plume.ptarmigan.xyz/docs).
 
 ```js
+// Fun
 eightBall(locale?: Locale): Promise<HeightBallData>;
+advice(locale?: Locale): Promise<AdviceData>;
+agify(name: string): Promise<AgifyData>;
 emojiMix(left: string, right: string): Promise<EmojiMixData>;
+emojify(text: string): Promise<EmojifyData>;
 funFact(locale?: Locale): Promise<FunFactData>;
 issImage(circle?: boolean): Promise<Buffer>;
 iss(): Promise<ISSData>;
@@ -91,10 +95,10 @@ urban(word: string): Promise<UrbanData>;
 color(hex: string): Promise<ColorData>;
 colorImage(hex: string): Promise<Buffer>;
 randomColor(): Promise<ColorData>;
-decode(type: DecodeType, text: string): Promise<DecodeData>;
-encode(type: EncodeType, text: string): Promise<EncodeData>;
 githubRepository(name: string): Promise<GitHubRepository>;
 githubUser(name: string): Promise<GitHubUser>;
+
+// Utility
 captcha(): Promise<{
     code: string;
     image: Buffer;
@@ -108,9 +112,36 @@ qrcode(text: string): Promise<Buffer>;
 reverseText(text: string): Promise<ReverseTextData>;
 screenshot(url: string): Promise<Buffer>;
 translate(text: string, to: string): Promise<TranslateData>;
+uuid(): Promise<UUIDData>
 weather(city: string): Promise<WeatherData>;
 wikipedia(page: string, locale?: Locale): Promise<WikipediaData>;
+
+// Animals
+duck(): Promise<Buffer>;
+fox(): Promise<Buffer>;
+
+// Encode
+decode(type: DecodeType, text: string): Promise<DecodeData>;
+
+// Decode
+encode(type: EncodeType, text: string): Promise<EncodeData>;
+
+// Fortnite
+fortniteMapImagePois(locale?: Locale): Promise<Buffer>;
+fortniteMapImage(): Promise<Buffer>;
+fortniteMap(locale?: Locale): Promise<FortniteMapData>;
+
+// Minecraft
+minecraftAvatar(name: string): Promise<Buffer>;
+minecraftBody(name: string): Promise<Buffer>;
+minecraftID(name: string): Promise<MinecraftIDData>;
+minecraftName(id: string): Promise<MinecraftNameData>;
+minecraftSkin(name: string): Promise<MinecraftSkinData>;
+
+// Interactions
 interaction(type: InteractionType): Promise<InteractionData>;
+
+// Image Creation
 achievement(text: string): Promise<Buffer>;
 alert(text: string): Promise<Buffer>;
 caution(text: string): Promise<Buffer>;
@@ -119,11 +150,15 @@ jail(avatar: string): Promise<Buffer>;
 nokia(url: string): Promise<Buffer>;
 tweet(avatar: string, name: string, username: string, text: string, retweets?: number, quote_tweets?: number, likes?: number): Promise<Buffer>;
 wanted(avatar: string): Promise<Buffer>;
+
+// Image Manipulation
 blur(url: string): Promise<Buffer>;
 colorify(url: string, color: string): Promise<Buffer>;
 grayscale(url: string): Promise<Buffer>;
 invert(url: string): Promise<Buffer>;
 rotate(url: string, deg: number): Promise<Buffer>;
+
+// Meme Creation
 changeMyMind(text: string): Promise<Buffer>;
 didYouMean(search: string, correction: string): Promise<Buffer>;
 drake(top: string, bottom: string): Promise<Buffer>;
@@ -139,6 +174,8 @@ stonks(avatar: string, stonks?: boolean): Promise<Buffer>;
 tableFlip(avatar: string): Promise<Buffer>;
 water(text: string): Promise<Buffer>;
 woosh(avatar: string): Promise<Buffer>;
+
+// Cards
 boost(avatar: string, username: string, text?: string): Promise<Buffer>;
 couple(avatar1: string, avatar2: string, percentage?: number, primary_color?: string): Promise<Buffer>;
 rank(avatar: string, global_name: string, username: string, level: number, xp: number, max_xp: number, rank?: number, bg_url?: string, bg_color?: string, blur?: boolean, color?: string): Promise<Buffer>;

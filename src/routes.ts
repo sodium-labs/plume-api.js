@@ -259,3 +259,56 @@ export interface WikipediaData {
 export interface InteractionData {
     url: string;
 }
+
+export interface AdviceData {
+    advice: string;
+}
+
+export interface AgifyData {
+    age: number;
+    name: string;
+    count: number;
+}
+
+export interface EmojifyData {
+    text: string;
+}
+
+export interface UUIDData {
+    uuid: string;
+}
+
+export interface FortniteMapData {
+    images: {
+        map: string;
+        map_with_pois: string;
+    };
+    pois: {
+        id: string;
+        name: string;
+        location: {
+            x: number;
+            y: number;
+            z: number;
+        };
+    }[];
+}
+
+export interface MinecraftIDData {
+    id: string;
+    name: string;
+}
+
+export interface MinecraftNameData {
+    id: string;
+    name: string;
+}
+
+export interface MinecraftSkinData {
+    id: string;
+    name: string;
+    skin_url: string;
+    cape_url: string;
+    avatar_url: string;
+    body_url: string;
+}
