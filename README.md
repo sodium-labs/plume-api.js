@@ -179,7 +179,7 @@ woosh(avatar: string): Promise<Buffer>;
 boost(avatar: string, username: string, text?: string): Promise<Buffer>;
 couple(avatar1: string, avatar2: string, percentage?: number, primary_color?: string): Promise<Buffer>;
 rank(avatar: string, global_name: string, username: string, level: number, xp: number, max_xp: number, rank?: number, bg_url?: string, bg_color?: string, blur?: boolean, color?: string): Promise<Buffer>;
-welcome(avatar: string, text1: string, text2?: string, text3?: string, bg_url?: string, bg_color?: string, font_color?: string, blur?: boolean): Promise<Buffer>;
+welcome(avatar: string, text1: string, text2?: string, text3?: string, bg_url?: string, bg_color?: string, font_color?: string, blur?: boolean, avatar_border?: boolean, avatar_border_color?: string): Promise<Buffer>;
 ```
 
 # Help

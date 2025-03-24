@@ -523,8 +523,21 @@ export default class PlumeAPI {
         bg_color?: string,
         font_color?: string,
         blur?: boolean,
+        avatar_border?: boolean,
+        avatar_border_color?: string,
     ): Promise<Buffer> {
-        const params = queryfy({ avatar, text1, text2, text3, bg_url, bg_color, font_color, blur });
+        const params = queryfy({
+            avatar,
+            text1,
+            text2,
+            text3,
+            bg_url,
+            bg_color,
+            font_color,
+            blur,
+            avatar_border,
+            avatar_border_color,
+        });
         return await this.rest.file(`/cards/welcome${params}`);
     }
 }
