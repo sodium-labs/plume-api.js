@@ -164,8 +164,8 @@ export interface ExecData {
     success: boolean;
     timeout: boolean;
     duration: number;
-    stdout: string;
-    stderr: string;
+    stdout: string | null;
+    stderr: string | null;
 }
 
 export interface FreeGamesData {
