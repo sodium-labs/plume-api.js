@@ -22,12 +22,13 @@ npm install @sodiumlabs/plume-api
 
 # Links
 
-- [Plume API](https://plume.ptarmigan.xyz)
-- [Plume API documentation](https://plume.ptarmigan.xyz/docs)
+- [Plume API](https://plume.sodiumlabs.xyz)
+- [Plume API documentation](https://plume.sodiumlabs.xyz/docs)
 - [Module references](#references)
 - [Discord server](https://discord.gg/8PDXWSHH7k)
 - [GitHub](https://github.com/sodium-labs/plume-api.js)
 - [npm](https://npmjs.com/package/@sodiumlabs/plume-api)
+- [Sodium Labs](https://sodiumlabs.xyz)
 
 # Examples
 
@@ -71,7 +72,7 @@ await interaction.editReply({ files: [attachment] });
 
 # References
 
-PlumeAPI class methods. <br/> You can find the types definitions on the [API documentation](https://plume.ptarmigan.xyz/docs).
+PlumeAPI class methods. <br/> You can find the types definitions on the [API documentation](https://plume.sodiumlabs.xyz/docs).
 
 ```js
 // Fun
