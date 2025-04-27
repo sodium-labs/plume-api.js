@@ -1,4 +1,20 @@
-export type ExecLanguage = "javascript" | "python" | "cpp" | "go" | "rust" | "java";
+export type ExecLanguage =
+    | "javascript"
+    | "typescript"
+    | "python"
+    | "cpp"
+    | "go"
+    | "rust"
+    | "java"
+    | "shell"
+    | "php"
+    | "ruby"
+    | "lua"
+    | "elixir"
+    | "zig"
+    | "postgres"
+    | "mysql"
+    | "sqlite";
 
 export type InteractionType =
     | "bite"
