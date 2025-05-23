@@ -207,6 +207,11 @@ export default class PlumeAPI {
         return await this.rest.get(`/ipinfo${params}`);
     }
 
+    public async latex(expr: string): Promise<Buffer> {
+        const params = queryfy({ expr });
+        return await this.rest.file(`/latex${params}`);
+    }
+
     public async qrcode(text: string): Promise<Buffer> {
         const params = queryfy({ text });
         return await this.rest.file(`/qrcode${params}`);
