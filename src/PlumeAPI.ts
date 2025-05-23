@@ -72,6 +72,11 @@ export default class PlumeAPI {
         return await this.rest.get(`/agify${params}`);
     }
 
+    public async asciiImage(text: string, font?: string): Promise<Buffer> {
+        const params = queryfy({ text, font });
+        return await this.rest.file(`/ascii-image${params}`);
+    }
+
     /**
      * @deprecated Use `eightBall` instead
      */
