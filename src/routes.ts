@@ -29,6 +29,8 @@ export type InteractionType =
     | "smile"
     | "tickle";
 
+export type AsciiFont = "standard" | "isometric" | "3d" | "letters";
+
 export type DecodeType = "base64" | "binary" | "hex" | "morse" | "unicode";
 
 export interface DecodeData {

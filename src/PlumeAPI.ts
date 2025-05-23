@@ -3,6 +3,7 @@ import {
     AdviceData,
     AgifyData,
     AsciiData,
+    AsciiFont,
     CryptoData,
     DecodeData,
     DecodeType,
@@ -73,7 +74,7 @@ export default class PlumeAPI {
         return await this.rest.get(`/agify${params}`);
     }
 
-    public async asciiImage(text: string, font?: string): Promise<Buffer> {
+    public async asciiImage(text: string, font?: AsciiFont): Promise<Buffer> {
         const params = queryfy({ text, font });
         return await this.rest.file(`/ascii-image${params}`);
     }
