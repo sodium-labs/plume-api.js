@@ -93,6 +93,10 @@ export interface NPMData {
     author_email: string;
     repository_url?: string;
     npm_url: string;
+    dependents: number;
+    search_score: number;
+    downloads_monthly: number;
+    downloads_weekly: number;
     last_published_date: string;
     last_published: number;
 }
