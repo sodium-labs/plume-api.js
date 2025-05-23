@@ -79,6 +79,8 @@ PlumeAPI class methods. <br/> You can find the types definitions on the [API doc
 eightBall(locale?: Locale): Promise<HeightBallData>;
 advice(locale?: Locale): Promise<AdviceData>;
 agify(name: string): Promise<AgifyData>;
+asciiImage(text: string, font?: AsciiFont): Promise<Buffer>;
+asciiText(text: string): Promise<AsciiData>;
 emojiMix(left: string, right: string): Promise<EmojiMixData>;
 emojify(text: string): Promise<EmojifyData>;
 funFact(locale?: Locale): Promise<FunFactData>;
@@ -109,6 +111,7 @@ definition(locale: Locale, word: string): Promise<DefinitionData>;
 exec(language: ExecLanguage, code: string): Promise<ExecData>;
 freeGames(locale?: Locale): Promise<FreeGamesData>;
 ipInfo(ip: string): Promise<IPInfoData>;
+latex(expr: string): Promise<Buffer>;
 qrcode(text: string): Promise<Buffer>;
 reverseText(text: string): Promise<ReverseTextData>;
 screenshot(url: string): Promise<Buffer>;
