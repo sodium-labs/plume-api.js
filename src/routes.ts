@@ -290,6 +290,10 @@ export interface AgifyData {
     count: number;
 }
 
+export interface AsciiData {
+    text: string;
+}
+
 export interface EmojifyData {
     text: string;
 }
