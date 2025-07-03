@@ -351,6 +351,8 @@ export interface RobloxUserAvatarAssetData {
     type_name: string;
 }
 
+export type RobloxUserAvatarType = "R6" | "R15";
+
 export interface RobloxUserData {
     id: number;
     name: string;
@@ -361,7 +363,7 @@ export interface RobloxUserData {
     has_verified_badge: boolean;
     friend_count: number;
     thumbnail_url: string | null;
-    avatar_type: "R6" | "R15";
+    avatar_type: RobloxUserAvatarType;
     avatar_assets: RobloxUserAvatarAssetData[];
 }
 
