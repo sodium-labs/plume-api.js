@@ -9,9 +9,7 @@ export default class PlumeAPIREST {
     public static readonly baseURL = "https://plume.sodiumlabs.xyz/api";
     public static readonly defaultUserAgent = `plume-api.js/${version}`;
 
-    public constructor(public readonly options: PlumeAPIRESTOptions = {}) {
-        this.options = options;
-    }
+    public constructor(public readonly options: PlumeAPIRESTOptions = {}) {}
 
     public async request(method: string, path: string, body?: object): Promise<Response> {
         if (!path.startsWith("/")) {
