@@ -29,6 +29,7 @@ import {
     MemeData,
     MinecraftBedrockServerStatus,
     MinecraftIDData,
+    MinecraftJavaServerStatus,
     MinecraftLatestVersions,
     MinecraftNameData,
     MinecraftSkinData,
@@ -335,7 +336,7 @@ export default class PlumeAPI {
         return await this.rest.get(`/minecraft/servers/status/bedrock${params}`);
     }
 
-    public async minecraftJavaServerStatus(host: string): Promise<MinecraftBedrockServerStatus> {
+    public async minecraftJavaServerStatus(host: string): Promise<MinecraftJavaServerStatus> {
         const params = queryfy({ host });
         return await this.rest.get(`/minecraft/servers/status/java${params}`);
     }
