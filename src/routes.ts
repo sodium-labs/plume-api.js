@@ -388,3 +388,33 @@ export interface MinecraftVersions {
     latest: MinecraftLatestVersions;
     versions: MinecraftVersion[];
 }
+
+export type MinecraftBedrockServerEdition = "MCPE" | "MCEE";
+
+export interface MinecraftBedrockServerVersion {
+    name: string | null;
+    protocol: number | null;
+}
+
+export interface MinecraftBedrockServerPlayers {
+    online: number | null;
+    max: number | null;
+}
+
+export interface MinecraftBedrockServerMotd {
+    raw: string;
+    clean: string;
+}
+
+export interface MinecraftBedrockServerStatus {
+    host: string;
+    port: number;
+    ip_address: string | null;
+    eula_blocked: boolean;
+    updated_at: number;
+    version: MinecraftBedrockServerVersion;
+    players: MinecraftBedrockServerPlayers;
+    motd: MinecraftBedrockServerMotd;
+    gamemode: string | null;
+    edition: MinecraftBedrockServerEdition | null;
+}

@@ -27,6 +27,7 @@ import {
     JokeData,
     MathData,
     MemeData,
+    MinecraftBedrockServerStatus,
     MinecraftIDData,
     MinecraftLatestVersions,
     MinecraftNameData,
@@ -327,6 +328,11 @@ export default class PlumeAPI {
     public async minecraftSkin(name: string): Promise<MinecraftSkinData> {
         const params = queryfy({ name });
         return await this.rest.get(`/minecraft/skin${params}`);
+    }
+
+    public async minecraftBedrockServerStatus(host: string): Promise<MinecraftBedrockServerStatus> {
+        const params = queryfy({ host });
+        return await this.rest.get(`/minecraft/servers/status/bedrock${params}`);
     }
 
     public async minecraftLatestVersions(): Promise<MinecraftLatestVersions> {
