@@ -302,12 +302,12 @@ export default class PlumeAPI {
 
     public async minecraftAvatar(name: string): Promise<Buffer> {
         const params = queryfy({ name });
-        return await this.rest.get(`/minecraft/avatar${params}`);
+        return await this.rest.file(`/minecraft/avatar${params}`);
     }
 
     public async minecraftBody(name: string): Promise<Buffer> {
         const params = queryfy({ name });
-        return await this.rest.get(`/minecraft/body${params}`);
+        return await this.rest.file(`/minecraft/body${params}`);
     }
 
     public async minecraftID(name: string): Promise<MinecraftIDData> {
