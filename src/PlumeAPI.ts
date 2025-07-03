@@ -35,6 +35,7 @@ import {
     QuoteData,
     RandomEmojiMixData,
     ReverseTextData,
+    RobloxIDData,
     TranslateData,
     UpsideDownTextData,
     UrbanData,
@@ -323,6 +324,13 @@ export default class PlumeAPI {
     public async minecraftSkin(name: string): Promise<MinecraftSkinData> {
         const params = queryfy({ name });
         return await this.rest.get(`/minecraft/skin${params}`);
+    }
+
+    // Roblox
+
+    public async robloxID(name: string): Promise<RobloxIDData> {
+        const params = queryfy({ name });
+        return await this.rest.get(`/roblox/id${params}`);
     }
 
     // Interactions

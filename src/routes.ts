@@ -338,3 +338,8 @@ export interface MinecraftSkinData {
     avatar_url: string;
     body_url: string;
 }
+
+export interface RobloxIDData {
+    id: number;
+    name: string;
+}
