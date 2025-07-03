@@ -343,3 +343,24 @@ export interface RobloxIDData {
     id: number;
     name: string;
 }
+
+export interface RobloxUserAvatarAssetData {
+    id: number;
+    name: string;
+    type_id: number;
+    type_name: string;
+}
+
+export interface RobloxUserData {
+    id: number;
+    name: string;
+    display_name: string;
+    description: string | null;
+    created_at: number;
+    is_banned: boolean;
+    has_verified_badge: boolean;
+    friend_count: number;
+    thumbnail_url: string | null;
+    avatar_type: "R6" | "R15";
+    avatar_assets: RobloxUserAvatarAssetData[];
+}

@@ -36,6 +36,7 @@ import {
     RandomEmojiMixData,
     ReverseTextData,
     RobloxIDData,
+    RobloxUserData,
     TranslateData,
     UpsideDownTextData,
     UrbanData,
@@ -331,6 +332,11 @@ export default class PlumeAPI {
     public async robloxID(name: string): Promise<RobloxIDData> {
         const params = queryfy({ name });
         return await this.rest.get(`/roblox/id${params}`);
+    }
+
+    public async robloxUser(name: string): Promise<RobloxUserData> {
+        const params = queryfy({ name });
+        return await this.rest.get(`/roblox/user${params}`);
     }
 
     // Interactions
