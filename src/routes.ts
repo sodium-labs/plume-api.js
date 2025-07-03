@@ -418,3 +418,31 @@ export interface MinecraftBedrockServerStatus {
     gamemode: string | null;
     edition: MinecraftBedrockServerEdition | null;
 }
+
+export interface MinecraftJavaServerVersion {
+    name_raw: string;
+    name_clean: string;
+    protocol: number;
+}
+
+export interface MinecraftJavaServerPlayers {
+    online: number;
+    max: number;
+}
+
+export interface MinecraftJavaServerMotd {
+    raw: string;
+    clean: string;
+}
+
+export interface MinecraftJavaServerStatus {
+    host: string;
+    port: number;
+    ip_address: string | null;
+    eula_blocked: boolean;
+    updated_at: number;
+    version: MinecraftJavaServerVersion;
+    players: MinecraftJavaServerPlayers;
+    motd: MinecraftJavaServerMotd;
+    icon: string | null;
+}

@@ -335,6 +335,11 @@ export default class PlumeAPI {
         return await this.rest.get(`/minecraft/servers/status/bedrock${params}`);
     }
 
+    public async minecraftJavaServerStatus(host: string): Promise<MinecraftBedrockServerStatus> {
+        const params = queryfy({ host });
+        return await this.rest.get(`/minecraft/servers/status/java${params}`);
+    }
+
     public async minecraftLatestVersions(): Promise<MinecraftLatestVersions> {
         return await this.rest.get(`/minecraft/versions/latest`);
     }
