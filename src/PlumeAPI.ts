@@ -28,8 +28,10 @@ import {
     MathData,
     MemeData,
     MinecraftIDData,
+    MinecraftLatestVersions,
     MinecraftNameData,
     MinecraftSkinData,
+    MinecraftVersions,
     NasaAPOD,
     NPMData,
     QuoteData,
@@ -325,6 +327,14 @@ export default class PlumeAPI {
     public async minecraftSkin(name: string): Promise<MinecraftSkinData> {
         const params = queryfy({ name });
         return await this.rest.get(`/minecraft/skin${params}`);
+    }
+
+    public async minecraftLatestVersions(): Promise<MinecraftLatestVersions> {
+        return await this.rest.get(`/minecraft/versions/latest`);
+    }
+
+    public async minecraftVersions(): Promise<MinecraftVersions> {
+        return await this.rest.get(`/minecraft/versions`);
     }
 
     // Roblox

@@ -364,3 +364,25 @@ export interface RobloxUserData {
     avatar_type: "R6" | "R15";
     avatar_assets: RobloxUserAvatarAssetData[];
 }
+
+export interface MinecraftLatestVersions {
+    release: string;
+    snapshot: string;
+}
+
+export type MinecraftVersionType = "release" | "snapshot" | "old_beta" | "old_alpha";
+
+export interface MinecraftVersion {
+    id: string;
+    type: MinecraftVersionType;
+    url: string;
+    update_time: number;
+    release_time: number;
+    sha1: string;
+    compliance_level: 0 | 1;
+}
+
+export interface MinecraftVersions {
+    latest: MinecraftLatestVersions;
+    versions: MinecraftVersion[];
+}
