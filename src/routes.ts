@@ -446,3 +446,10 @@ export interface MinecraftJavaServerStatus {
     motd: MinecraftJavaServerMotd;
     icon: string | null;
 }
+
+export interface PlusCodeData {
+    code: string;
+    length: number;
+}
+
+export type PlusCodeLength = 4 | 6 | 8 | 10 | 11 | 12 | 13 | 14 | 15;

@@ -36,6 +36,8 @@ import {
     MinecraftVersions,
     NasaAPOD,
     NPMData,
+    PlusCodeData,
+    PlusCodeLength,
     QuoteData,
     RandomEmojiMixData,
     ReverseTextData,
@@ -223,6 +225,11 @@ export default class PlumeAPI {
     public async ipInfo(ip: string): Promise<IPInfoData> {
         const params = queryfy({ ip });
         return await this.rest.get(`/ipinfo${params}`);
+    }
+
+    public async plusCode(lat: number, lon: number, code_length?: PlusCodeLength): Promise<PlusCodeData> {
+        const params = queryfy({ lat, lon, code_length });
+        return await this.rest.get(`/pluscode${params}`);
     }
 
     public async latex(expr: string): Promise<Buffer> {
