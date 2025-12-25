@@ -106,6 +106,11 @@ export interface NPMData {
     search_score: number;
     downloads_monthly: number;
     downloads_weekly: number;
+    downloads_history?: {
+        count: number;
+        start: number;
+        end: number;
+    };
     last_published_date: string;
     last_published: number;
 }
