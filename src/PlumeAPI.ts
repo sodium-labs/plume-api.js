@@ -8,6 +8,7 @@ import {
     DecodeData,
     DecodeType,
     DefinitionData,
+    EightBallData,
     EmojifyData,
     EmojiMixData,
     EncodeData,
@@ -67,7 +68,7 @@ export default class PlumeAPI {
 
     // Fun
 
-    public async eightBall(locale?: Locale): Promise<HeightBallData> {
+    public async eightBall(locale?: Locale): Promise<EightBallData> {
         const params = queryfy({ locale });
         return await this.rest.get(`/8ball${params}`);
     }

@@ -43,6 +43,13 @@ export interface EncodeData {
     encoded: string;
 }
 
+export interface EightBallData {
+    answer: string;
+}
+
+/**
+ * @deprecated Use `EightBallData` instead
+ */
 export interface HeightBallData {
     answer: string;
 }
