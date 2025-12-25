@@ -3,14 +3,31 @@
     "name": "@sodiumlabs/plume-api",
     "version": "1.7.0",
     "description": "The official Plume API wrapper",
-    "license": "MIT",
-    "author": "SodiumLabs",
-    "scripts": {
-        "build": "tsc --noEmit && tsup",
-        "lint": "tsc --noEmit && oxlint && prettier . --check",
-        "format": "prettier . --write",
-        "test": "vitest"
+    "keywords": [
+        "api",
+        "bot",
+        "discord",
+        "plume",
+        "plume-api",
+        "plumeapi",
+        "sodium",
+        "sodiumlabs",
+        "wrapper"
+    ],
+    "homepage": "https://github.com/sodium-labs/plume-api.js#readme",
+    "bugs": {
+        "url": "https://github.com/sodium-labs/plume-api.js/issues"
     },
+    "license": "MIT",
+    "author": "sodiumlabs",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sodium-labs/plume-api.js.git"
+    },
+    "files": [
+        "dist"
+    ],
+    "types": "./dist/index.d.ts",
     "exports": {
         "require": {
             "types": "./dist/index.d.ts",
@@ -21,35 +38,21 @@
             "default": "./dist/index.mjs"
         }
     },
-    "types": "./dist/index.d.ts",
-    "files": [
-        "dist"
-    ],
-    "keywords": [
-        "api",
-        "discord",
-        "bot",
-        "plume",
-        "wrapper",
-        "plumeapi",
-        "plume-api",
-        "sodium",
-        "sodiumlabs"
-    ],
-    "homepage": "https://github.com/sodium-labs/plume-api.js#readme",
-    "bugs": {
-        "url": "https://github.com/sodium-labs/plume-api.js/issues"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/sodium-labs/plume-api.js.git"
+    "scripts": {
+        "build": "tsup",
+        "lint": "tsc --noEmit && oxlint && oxfmt --check",
+        "fmt": "oxfmt",
+        "test": "vitest"
     },
     "devDependencies": {
-        "@types/node": "^22.18.6",
-        "oxlint": "^1.16.0",
-        "prettier": "^3.5.2",
-        "tsup": "^8.5.0",
-        "typescript": "^5.9.2",
-        "vitest": "^3.2.4"
+        "@types/node": "^24.10.4",
+        "oxfmt": "^0.20.0",
+        "oxlint": "^1.35.0",
+        "tsup": "^8.5.1",
+        "typescript": "^5.9.3",
+        "vitest": "4.0.16"
+    },
+    "engines": {
+        "node": ">=18"
     }
 }
