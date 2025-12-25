@@ -82,7 +82,7 @@ export default class PlumeAPI {
         return await this.rest.get(`/agify${params}`);
     }
 
-    public async asciiImage(text: string, font?: AsciiFont): Promise<Buffer> {
+    public async asciiImage(text: string, font?: AsciiFont | (string & {})): Promise<Buffer> {
         const params = queryfy({ text, font });
         return await this.rest.file(`/ascii-image${params}`);
     }
@@ -202,7 +202,7 @@ export default class PlumeAPI {
         return { code, image };
     }
 
-    public async crypto(name: string, currency: "usd" | "eur"): Promise<CryptoData> {
+    public async crypto(name: string, currency: "usd" | "eur" | (string & {})): Promise<CryptoData> {
         const params = queryfy({ name, currency });
         return await this.rest.get(`/crypto${params}`);
     }
@@ -212,7 +212,7 @@ export default class PlumeAPI {
         return await this.rest.get(`/definition${params}`);
     }
 
-    public async exec(language: ExecLanguage, code: string): Promise<ExecData> {
+    public async exec(language: ExecLanguage | (string & {}), code: string): Promise<ExecData> {
         const params = queryfy({ language, code });
         return await this.rest.get(`/exec${params}`);
     }
