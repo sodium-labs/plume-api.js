@@ -27,6 +27,7 @@ export interface ColorData {
         value: string;
     };
     name: string;
+    int: number;
     hex: {
         value: string;
         clean: string;
