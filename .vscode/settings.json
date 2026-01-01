@@ -3,5 +3,8 @@
     "editor.defaultFormatter": "oxc.oxc-vscode",
     "[typescript]": {
         "editor.defaultFormatter": "oxc.oxc-vscode"
+    },
+    "files.associations": {
+        "api-extractor.json": "jsonc"
     }
 }

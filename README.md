@@ -12,7 +12,7 @@
 
 # About
 
-`@sodiumlabs/plume-api` is a module that allows you to easily use Plume API.
+`@sodiumlabs/plume-api` is a module that allows you to easily use Plume API. See the [module docs](https://docs.sodiumlabs.xyz/docs/packages/plume-api/stable), and the [API docs](https://plume.sodiumlabs.xyz/docs) to understand how to use it.
 
 # Installation
 
@@ -24,7 +24,7 @@ npm install @sodiumlabs/plume-api
 
 - [Plume API](https://plume.sodiumlabs.xyz)
 - [Plume API documentation](https://plume.sodiumlabs.xyz/docs)
-- [Module documentation](https://docs.sodiumlabs.xyz/plume-api.js)
+- [Module documentation](https://docs.sodiumlabs.xyz/docs/packages/plume-api/stable)
 - [Discord server](https://discord.gg/8PDXWSHH7k)
 - [GitHub](https://github.com/sodium-labs/plume-api.js)
 - [npm](https://npmjs.com/package/@sodiumlabs/plume-api)
@@ -50,9 +50,18 @@ client.plumeAPI = new PlumeAPI();
 You can now use Plume API anywhere in your bot. <br/>For example, in a slash command:
 
 ```js
-const joke = await client.plumeAPI.joke();
+async execute(interaction) {
+    const client = interaction.client;
 
-await interaction.reply(`Question: ${joke.question}` + `\nAnswer: ||${joke.answer}||`);
+    // Query the API
+    const joke = await client.plumeAPI.joke();
+
+    // Show the response
+    await interaction.reply(
+        `Question: ${joke.question}`
+        + `\nAnswer: ||${joke.answer}||`
+    );
+}
 ```
 
 To send an image received from the API, you can use the `AttachmentBuilder` class from `discord.js`:
@@ -60,14 +69,18 @@ To send an image received from the API, you can use the `AttachmentBuilder` clas
 ```js
 const { AttachmentBuilder } = require("discord.js");
 
-// Since downloading the image can take some time
-// depending on your connection speed, you should defer.
-await interaction.deferReply();
+async execute(interaction) {
+    const client = interaction.client;
 
-const buffer = await client.plumeAPI.facts("PlumeAPI is the best API");
-const attachment = new AttachmentBuilder(buffer, { name: "image.png" });
+    // Since downloading the image can take some time
+    // depending on your connection speed, you should defer.
+    await interaction.deferReply();
 
-await interaction.editReply({ files: [attachment] });
+    const buffer = await client.plumeAPI.facts("PlumeAPI is the best API");
+    const attachment = new AttachmentBuilder(buffer, { name: "image.png" });
+
+    await interaction.editReply({ files: [attachment] });
+}
 ```
 
 # Documentation
@@ -79,10 +92,10 @@ Plume API provides two main resources for documentation:
    This documentation covers all available endpoints, types, and detailed comments for the API.
 
 - **Module Reference:**  
-   [Module Documentation](https://docs.sodiumlabs.xyz/plume-api.js)  
+   [Module Documentation](https://docs.sodiumlabs.xyz/docs/packages/plume-api/stable)  
    This documentation explains how to use the `@sodiumlabs/plume-api` npm package, with all available methods and types.
 
-For most use cases, you'll want to refer to the [`PlumeAPI` class page](https://docs.sodiumlabs.xyz/plume-api.js/classes/PlumeAPI), which lists all available methods for interacting with the API through this module.
+For most use cases, you'll want to refer to the [`PlumeAPI` class page](https://docs.sodiumlabs.xyz/docs/packages/plume-api/stable/PlumeAPI:Class), which lists all available methods for interacting with the API through this module.
 
 # Help
 
