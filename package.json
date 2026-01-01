@@ -1,7 +1,7 @@
 {
     "$schema": "https://json.schemastore.org/package.json",
     "name": "@sodiumlabs/plume-api",
-    "version": "1.8.0",
+    "version": "1.8.1",
     "description": "The official Plume API wrapper",
     "keywords": [
         "api",
@@ -27,24 +27,31 @@
     "files": [
         "dist"
     ],
+    "main": "./dist/index.js",
+    "module": "./dist/index.mjs",
     "types": "./dist/index.d.ts",
     "exports": {
-        "require": {
-            "types": "./dist/index.d.ts",
-            "default": "./dist/index.js"
-        },
-        "import": {
-            "types": "./dist/index.d.mts",
-            "default": "./dist/index.mjs"
+        ".": {
+            "require": {
+                "types": "./dist/index.d.ts",
+                "default": "./dist/index.js"
+            },
+            "import": {
+                "types": "./dist/index.d.mts",
+                "default": "./dist/index.mjs"
+            }
         }
     },
     "scripts": {
         "build": "tsup",
+        "build:docs": "tsc -p tsconfig.docs.json",
         "lint": "tsc --noEmit && oxlint && oxfmt --check",
         "fmt": "oxfmt",
-        "test": "vitest"
+        "test": "vitest",
+        "docs": "npm run build:docs && api-extractor run --local"
     },
     "devDependencies": {
+        "@microsoft/api-extractor": "^7.55.2",
         "@types/node": "^24.10.4",
         "oxfmt": "^0.20.0",
         "oxlint": "^1.35.0",
