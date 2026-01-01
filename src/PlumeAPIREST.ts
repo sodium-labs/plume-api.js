@@ -1,13 +1,12 @@
 import PlumeAPIError from "./PlumeAPIError";
-import { version } from "@/../package.json";
 
 export interface PlumeAPIRESTOptions {
     userAgent?: string;
 }
 
 export default class PlumeAPIREST {
-    public static readonly baseURL = "https://plume.sodiumlabs.xyz/api";
-    public static readonly defaultUserAgent = `plume-api.js/${version}`;
+    public static readonly baseURL: string = "https://plume.sodiumlabs.xyz/api";
+    public static readonly defaultUserAgent: string = "plume-api.js";
 
     public constructor(public readonly options: PlumeAPIRESTOptions = {}) {}
 

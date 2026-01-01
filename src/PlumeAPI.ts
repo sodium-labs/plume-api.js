@@ -57,7 +57,15 @@ import { queryfy } from "./utils";
 export interface PlumeAPIOptions extends PlumeAPIRESTOptions {}
 
 /**
- * The client to interact with Plume API
+ * The client to interact with Plume API.
+ *
+ * @example
+ * ```ts
+ * const plumeAPI = new PlumeAPI();
+ *
+ * const joke = await plumeAPI.joke();
+ * console.log(joke);
+ * ```
  */
 export default class PlumeAPI {
     public readonly rest: PlumeAPIREST;
