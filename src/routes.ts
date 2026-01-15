@@ -104,6 +104,7 @@ export interface NPMData {
     npm_url: string;
     dependents: number;
     search_score: number;
+    downloads_yearly?: number;
     downloads_monthly: number;
     downloads_weekly: number;
     downloads_history?: {

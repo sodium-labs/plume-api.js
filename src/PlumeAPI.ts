@@ -497,6 +497,11 @@ export default class PlumeAPI {
         return await this.rest.file(`/memes/hugo${params}`);
     }
 
+    public async jarvis(text: string, banner?: boolean): Promise<Buffer> {
+        const params = queryfy({ text, banner });
+        return await this.rest.file(`/memes/jarvis${params}`);
+    }
+
     public async nothing(text: string): Promise<Buffer> {
         const params = queryfy({ text });
         return await this.rest.file(`/memes/nothing${params}`);
